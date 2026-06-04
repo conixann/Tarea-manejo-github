@@ -12,15 +12,21 @@ for x in range(cant_notas):
     while True:
         try:
             nota=float(input(f"Ingrese la nota {x+1}:"))
-            if nota > 0:
+            if nota >= 1 and nota <=7:
+                suma_notas += nota
+                
                 break
             else: 
                 print("La nota ingresada debe ser un número positivo")
         except ValueError:
             print("Error ingrese un número positivo (entero o decimal)")
 
-        suma_notas += nota
-
 promedio= suma_notas/cant_notas
 
+
+
 print(promedio)
+if promedio >= 4:
+    print("Estado: APROBADO")
+else: 
+    print("Estado: REPROBADO")
